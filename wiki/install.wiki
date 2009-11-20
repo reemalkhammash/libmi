@@ -1,0 +1,59 @@
+#summary Instalation instructions for the libMI
+#labels instalation,instructions
+
+libMI is a C++ library to calculate the mutual information of a pair of temporal series with bootstrap confidence bands.
+
+= INSTALL = 
+
+libMI depends on the GNU Scientific Library (GSL) and on a modified version the Approximate Nearest Neighbour library (ANN, included in the source download).
+
+To install libMI do the following steps:
+
+==Install the development files for GSL.==
+
+If you use a Debian like system (like Ubuntu), this can be done by installing the packages libgsl0 and libgsl0-dev by your favorite method:
+
+{{{sudo aptitude install libgsl0-dev libgsl0}}}
+
+==Install ANN. ==
+
+Make sure you have g++ installed in your system. If you are unsure install the build-essential package:
+
+sudo aptitude install build-essential
+
+Enter the created folder:
+{{{cd ann_1.1.1 }}}
+
+and type:
+{{{make linux-g++
+sudo make install}}}
+
+==Install libMI==
+
+Enter the folder:
+cd libMI
+
+If you prefer to have libMI as a dynamically linked library do (if you don't care or don't know what this means, just ignore this step):
+mv Makefile MakefileStatic
+mv MakefileDyn Makefile
+
+Compile and install the library:
+make all
+sudo make install
+
+==Test libMI==
+
+Enter the test folder inside libMI folder:
+cd test
+
+Compile the program test.c:
+make
+
+Run the test:
+./test
+
+If it spit some numbers out everything is fine.
+
+=USING libMI=
+
+A manual of how to use libMI functions is included in PDF version.
