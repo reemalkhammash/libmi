@@ -19,38 +19,39 @@ If you use a Debian like system (like Ubuntu), this can be done by installing th
 
 Make sure you have g++ installed in your system. If you are unsure install the build-essential package:
 
-sudo aptitude install build-essential
+{{{sudo aptitude install build-essential}}}
 
 Enter the created folder:
 {{{cd ann_1.1.1 }}}
 
 and type:
+
 {{{make linux-g++
 sudo make install}}}
 
 ==Install libMI==
 
 Enter the folder:
-cd libMI
+{{{cd libMI}}}
 
 If you prefer to have libMI as a dynamically linked library do (if you don't care or don't know what this means, just ignore this step):
-mv Makefile MakefileStatic
-mv MakefileDyn Makefile
+{{{mv Makefile MakefileStatic
+mv MakefileDyn Makefile}}}
 
 Compile and install the library:
-make all
-sudo make install
+{{{make all
+sudo make install}}}
 
 ==Test libMI==
 
 Enter the test folder inside libMI folder:
-cd test
+{{{cd test}}}
 
 Compile the program test.c:
-make
+{{{make}}}
 
 Run the test:
-./test
+{{{./test}}}
 
 If it spit some numbers out everything is fine.
 
